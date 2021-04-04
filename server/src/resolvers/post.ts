@@ -46,7 +46,7 @@ export class PostResolver {
   async deletePost(
     @Arg("id") id: number,
     @Ctx() { em }: MyContext
-  ): Promise<Post | null> {
+  ): Promise<boolean> {
     await em.nativeDelete(Post, { id });
     return true;
   }
